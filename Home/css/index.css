@@ -1,0 +1,101 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif,serif;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: white;
+  width: 100%; }
+  ul li {
+    border: solid;
+    border-width: 1px 1px 0px 0px;
+    list-style: none;
+    width: 100%;
+    text-align: center; }
+    ul li:last-of-type {
+      border-width: 1px 0px 0px 0px; }
+    ul li a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: black; }
+      ul li a img {
+        position: relative;
+        top: 5px;
+        height: 1cm; }
+    ul li span {
+      display: block;
+      position: relative;
+      font-size: 16px; }
+
+section.about {
+  text-align: center;
+  height: 370px;
+  width: 100%;
+  margin-top: 80px; }
+
+section.how-1 {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #E9E9E9; }
+  section.how-1 div.text {
+    width: 40%;
+    height: 100%; }
+    section.how-1 div.text p {
+      margin-top: 50px; }
+  @media screen and (max-width: 768px) {
+    section.how-1 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto; }
+      section.how-1 div.text {
+        width: 90%; }
+        section.how-1 div.text p, section.how-1 div.text h2 {
+          padding: 0 20px 0 20px; }
+      section.how-1 img {
+        margin: 30px 0 30px; } }
+
+section.how-2 {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  section.how-2 div.text {
+    width: 40%;
+    height: 100%; }
+    section.how-2 div.text p {
+      margin-top: 40px; }
+  @media screen and (max-width: 768px) {
+    section.how-2 {
+      flex-direction: column-reverse;
+      height: auto; }
+      section.how-2 div.text {
+        width: 90%; }
+        section.how-2 div.text p, section.how-2 div.text h2 {
+          padding: 0 20px 0 20px; }
+      section.how-2 img {
+        margin-top: 30px;
+        max-width: 400px;
+        height: auto; } }
+
+p.sub-title {
+  color: #C3A575;
+  font-size: 13px; }
+
+h2.section-title {
+  font-size: 30px;
+  margin-top: 10px; }
+
+/*# sourceMappingURL=index.css.map */

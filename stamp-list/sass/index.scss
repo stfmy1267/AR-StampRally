@@ -1,0 +1,141 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif,serif;
+    margin: 0;
+    padding: 0; 
+}
+// ブレイクポイント
+$breakPoints:(
+    'pc':'screen and (max-width: 1280px)',
+    'tablet':'screen and (max-width: 768px)',
+    'sp':'screen and (max-width: 480px)'
+)!default;
+
+@mixin mq($breakPoint: pc) {
+    @media #{map-get($breakPoints, $breakPoint)} {
+        @content;
+    }
+}
+
+// ベースカラーと補助色
+$sub_color:#C3A575;
+$section_color: #E9E9E9;
+
+// ボトムメニュー
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: white;
+    width: 100%;
+    li{
+        border: solid;
+        border-width: 1px 1px 0px 0px;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        &:last-of-type{
+            border-width: 1px 0px 0px 0px;
+        }
+        a{
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+            img{
+                position: relative;
+                top:5px;
+                height: 1cm;
+            }
+        }
+        span{
+            display: block;
+            position:relative;
+            // top: -3px;
+            font-size: 13px;
+        }
+    }
+}
+
+// 概要
+section.about{
+    text-align: center;
+    height: 370px;
+    width: 100%;
+    margin-top: 80px;
+}
+
+// 使い方
+section.how-1{
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $section_color;
+    div.text{
+        width: 40%;
+        height: 100%;
+        p{
+            margin-top: 50px;
+        }
+    }
+    @include mq(tablet) { 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        div.text{
+            width: 100%;
+            p,h2{
+                padding:0 20px 0 20px ;
+            }
+        }
+        img{
+            margin: 30px 0 30px;
+        }
+    }
+}
+
+section.how-2{
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    div.text{
+        width: 40%;
+        height: 100%;
+        p{
+            margin-top: 40px;
+        }
+    }
+    @include mq(tablet) { 
+        flex-direction: column-reverse;
+        height: auto;
+        div.text{
+            width: 100%;
+            p,h2{
+                padding:0 20px 0 20px ;
+            }
+        }
+        img{
+            margin-top: 30px;
+            max-width: 400px;
+            height: auto;
+        }
+    }
+}
+
+p.sub-title{
+    color: $sub_color;
+    font-size:13px;
+}
+h2.section-title{
+    font-size: 30px;
+    margin-top: 10px ;
+}
