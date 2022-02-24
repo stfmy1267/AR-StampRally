@@ -22,10 +22,6 @@ $('#stamp').on('click',()=>{
     $('#stamp-list').css({'transform':'translate(-50%,150%)','transition': '.8s'})
     $(btn).toggleClass("slidein");
 });
-// $('#stamplist').click(function() {
-//     alert('スタンプゲット');
-//     location.href = '../stamp-list/StampList.html?name=' +  encodeURIComponent('松ヶ岡本陣');
-// })
 $('#stampback').on('click',()=>{
     $('#stamp-list').css({'transform':'translate(-50%,-150%)','transition': '.8s'})
     $(btn).toggleClass("slidein");

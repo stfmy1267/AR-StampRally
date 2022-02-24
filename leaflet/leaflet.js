@@ -16,16 +16,16 @@ let id,marker,circle;
 let a = L.marker([38.7000547037002, 139.884302222165]).addTo(map).bindPopup('<img src="../AR/img/MainImg-2.jpg" style="width:150px;"><br/>' + "松ヶ岡本殿");
 a = L.latLng(38.7000547037002, 139.884302222165);
 // 一番蚕室・松ケ岡開墾記念館
-let b = L.marker([38.700156219219416, 139.8853846828844]).addTo(map).bindPopup('<img src="../material/一番蚕室.jpeg" style="width:150px;"><br/>' + "一番蚕室(松ケ岡開墾記念館)");
+let b = L.marker([38.700156219219416, 139.8853846828844]).addTo(map).bindPopup('<img src="../img/一番蚕室.jpeg" style="width:150px;"><br/>' + "一番蚕室(松ケ岡開墾記念館)");
 b = L.latLng(38.700156219219416, 139.8853846828844);
 // 二番蚕室
-let c = L.marker([38.69990634769108, 139.88555496066445]).addTo(map).bindPopup('<img src="../material/二番蚕室.jpeg" style="width:150px;"><br/>' + "二番蚕室");
+let c = L.marker([38.69990634769108, 139.88555496066445]).addTo(map).bindPopup('<img src="../img/二番蚕室.jpeg" style="width:150px;"><br/>' + "二番蚕室");
 c = L.latLng(38.69990634769108, 139.88555496066445);
 // 三番蚕室(おカイコさまの蔵)
-let x = L.marker([38.700276684671984, 139.88611289932476]).addTo(map).bindPopup('<img src="../material/三番蚕室.jpeg" style="width:150px;"><br/>' + "三番蚕室(おカイコさまの蔵)");
+let x = L.marker([38.700276684671984, 139.88611289932476]).addTo(map).bindPopup('<img src="../img/三番蚕室.jpeg" style="width:150px;"><br/>' + "三番蚕室(おカイコさまの蔵)");
 x = L.latLng(38.700276684671984, 139.88611289932476);
 // 寄宿舎(くらふと松ヶ岡こぅでらいね)
-let y = L.marker([38.70028849099635, 139.88657682542117]).addTo(map).bindPopup('<img src="../material/こうでらいね.jpeg" style="width:150px;"><br/>' + "寄宿舎(くらふと松ヶ岡こぅでらいね)");
+let y = L.marker([38.70028849099635, 139.88657682542117]).addTo(map).bindPopup('<img src="../img/こうでらいね.jpeg" style="width:150px;"><br/>' + "寄宿舎(くらふと松ヶ岡こぅでらいね)");
 y = L.latLng(38.70028849099635, 139.88657682542117);
 // 貯桑土蔵(松岡窯陶芸教室)
 let z = L.marker([38.699984888670514, 139.88600858562816]).addTo(map).bindPopup('<img src="../AR/img/MainImg-1.jpg" style="width:150px;"><br/>' + "貯桑土蔵(松岡窯陶芸教室)");
@@ -43,17 +43,17 @@ function onLocationFound(e) {
     // 現在地と目的地の距離を計測
     // 50メートル以内に近づいた時の処理
     if (a.distanceTo(e.latlng) < threshold) {
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location1.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location1.html');
     } else if(b.distanceTo(e.latlng) < threshold){
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location2.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location2.html');
     } else if (c.distanceTo(e.latlng) < threshold){
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location3.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location3.html');
     } else if (x.distanceTo(e.latlng) < threshold){
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location4.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location4.html');
     } else if (y.distanceTo(e.latlng) < threshold){
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location5.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location5.html');
     } else if (z.distanceTo(e.latlng) < threshold){
-        window.location.href=('https://www.yatex.org/gitbucket/Fumiya238/AR-project/pages/AR/AR-location6.html');
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location6.html');
     }
 };
 // 位置情報取得できなかったときの処理
