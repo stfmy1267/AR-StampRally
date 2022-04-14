@@ -8,10 +8,6 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
   <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.js"></script>
-  <!-- AR.js ライブラリの読み込み -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
 
   <!-- jquery ライブラリの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -32,7 +28,7 @@
 
     <a-entity  
       cursor-listener 
-      position="5 0 -10"
+      position="3 0 -5"
       animation="property:rotation; dur:10000; from : -0 0 0; to : -0 360 0;loop : -1; easing:linear;"
       gltf-model="#char">
     </a-entity>
@@ -57,7 +53,7 @@
     <button id="camera"><img src="img/camera.svg" alt=""></button>
   </div>
 
-  <div class="info">
+  <div class="info" style="max-width: 650px;">
     <img src="img/MainImg-1.jpg">
     <div>
       <h1>テスト</h1>
@@ -85,30 +81,8 @@
     <img id="snap">
     <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><img src="img/bin.svg"></a>
     <a href="" id="take-photo" title="Take Photo"><img src="img/camera.svg"></a>
-    <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><img
-        src="img/download.svg"></a>
+    <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><imgsrc="img/download.svg"></a>
   </div>
-  <script>
-    // 現在地の取得
-    // function GetLocation() {
-    //   navigator.geolocation.getCurrentPosition(AddLocation);
-    // }
-
-    // function AddLocation(position) {
-    //   let geo_lat = position.coords.latitude - +0.00001;
-    //   let geo_lng = position.coords.longitude + 0.00001;
-    //   $('a-assets').after($("<a-entity gps-entity-place='latitude:" + geo_lat + '; longitude:' + geo_lng +
-    //     ";' look-at='[gps-camera]' scale ='1 1 1' potion='0 0 0' animation='property:rotation; dur:10000; from:0 0 0; to:0 360 0; loop:-1; easing:linear;' gltf-model='#char'></a-entity>"
-    //     ));
-    //   let entity = document.querySelector('a-entity');
-    //   console.log(entity.getAttribute('gps-entity-place'));
-    //   console.log(entity);
-    // }
-
-    // GetLocation();
-
-    // alert('周りを見渡してみてください')
-  </script>
 </body>
 
 </html>
