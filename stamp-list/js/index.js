@@ -1,7 +1,7 @@
 let locationdata = location.search;
 let  value = locationdata.split('=');
 
-console.log(decodeURIComponent(value[1]));
+console.log(decodeURIComponent(value));
 
 // buttonとimgタグの取得
 const Reset = document.getElementById('reset');
@@ -67,6 +67,10 @@ const GetStamp = (value) => {
 	} 
 	else if (value == "貯桑土蔵"){
 		Imgs[5].src = 'img/text_get.png';
+		SaveData();
+	}
+	else if (value == "テスト"){
+		Imgs[6].src = 'img/text_get.png';
 		SaveData();
 	}
 }

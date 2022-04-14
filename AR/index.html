@@ -40,7 +40,7 @@
   </a-scene>
 
   <div id="stamp-list">
-    <a id="stamplist" href="https://stfmy1267.github.io/AR-StampRally/stamp-list/StampList.html">
+    <a id="stamplist">
       <p>スタンプゲット</p>
     </a>
     <button id="stampback">閉じる</button>
@@ -84,5 +84,10 @@
     <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><imgsrc="img/download.svg"></a>
   </div>
 </body>
-
+<script>
+  $('#stamplist').click(function() {
+    alert('スタンプゲット');
+    location.href = '../stamp-list/StampList.html?name=' +  encodeURIComponent('テスト');
+  })
+  </script>
 </html>
