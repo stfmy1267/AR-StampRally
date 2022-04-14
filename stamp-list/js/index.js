@@ -69,6 +69,10 @@ const GetStamp = (value) => {
 		Imgs[5].src = 'img/text_get.png';
 		SaveData();
 	}
+	else if (value == "テスト"){
+		Imgs[5].src = 'img/text_get.png';
+		SaveData();
+	}
 }
 GetStamp(decodeURIComponent(value[1]));
 
