@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 map.setView([38.70010302736321, 139.88572398517292],18);
 // map.locate({setView:true, maxZoom: 16}); よくわかんないけど中心位置がtrueで自分の今いる位置が表示される
 
-let threshold = 10; //50メートル以内に設定
+let threshold = 13; //50メートル以内に設定
 let id,marker,circle;
 // マーカーと緯度経度の設定
 // 松ヶ丘開本殿
@@ -31,13 +31,38 @@ y = L.latLng(38.70028849099635, 139.88657682542117);
 let z = L.marker([38.699984888670514, 139.88600858562816]).addTo(map).bindPopup('<img src="../AR/img/MainImg-1.jpg" style="width:150px;"><br/>' + "貯桑土蔵(松岡窯陶芸教室)");
 z = L.latLng(38.699984888670514, 139.88600858562816);
 
+function onLocationFound(e) {
+    let radius = e.accuracy/2;
+    if (marker) map.removeLayer(marker); //マーカー削除
+    marker = L.marker(e.latlng).addTo(map); //マーカー追加
+    marker.bindPopup('現在地').openPopup();
+    if (circle) map.removeLayer(circle);
+    circle = L.circle(e.latlng, radius).addTo(map);
+    map.setView(e.latlng);
+    // 現在地と目的地の距離を計測
+    // 50メートル以内に近づいた時の処理
+    if (a.distanceTo(e.latlng) < threshold) {
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location1.html');
+    } else if(b.distanceTo(e.latlng) < threshold){
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location2.html');
+    } else if (c.distanceTo(e.latlng) < threshold){
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location3.html');
+    } else if (x.distanceTo(e.latlng) < threshold){
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location4.html');
+    } else if (y.distanceTo(e.latlng) < threshold){
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location5.html');
+    } else if (z.distanceTo(e.latlng) < threshold){
+        window.location.href=('https://stfmy1267.github.io/AR-StampRally/AR/AR-location6.html');
+    }
+}
+
 // 位置情報取得できなかったときの処理
 function onLocationError(e) {
     alert(e.message);
 }
 // 位置情報を持ってくる関数
 function watchFound(e) {
-    onMapClick({
+    onLocationFound({
     latlng: L.latLng([
     e.coords.latitude, e.coords.longitude]),
     accuracy: e.coords.accuracy});
